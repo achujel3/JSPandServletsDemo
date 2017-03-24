@@ -10,17 +10,13 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "DemoServlet", urlPatterns = {"/a/b/c", "/servlets/hey"})
 public class DemoServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("GET method initialized");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<h1>hey</h1>");
         out.flush();
-
-
     }
+
 }
