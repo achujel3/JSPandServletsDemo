@@ -30,7 +30,7 @@ public class XmlServlet extends HttpServlet {
         resp.getWriter().println("<h1>3. Your profession is " + prof + ".</h1>");
         resp.getWriter().println("<h1>4. Your locations are " + locations.length + ":</h1>");
         for (int i = 0; i < locations.length; i++) {
-            resp.getWriter().println("<h1>" + i + ".) " + locations[i] + "</h1>");
+            resp.getWriter().println("<h1>" + (i + 1) + ".) " + locations[i] + "</h1>");
         }
     }
 }

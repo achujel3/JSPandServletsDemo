@@ -17,7 +17,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>xmlServlet</welcome-file>
+        <welcome-file>a/b/c</welcome-file>
     </welcome-file-list>
 
 </web-app>
