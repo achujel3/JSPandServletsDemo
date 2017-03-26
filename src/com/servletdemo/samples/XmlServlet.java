@@ -10,6 +10,15 @@ public class XmlServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("<h1>This is a response from Xml configured servlet</h1>");
+        String name = req.getParameter("name");
+        resp.getWriter().println("<h1>This is a response from Xml configured servlet, GET method</h1>");
+        resp.getWriter().println("<h1>Hello, " + name + "!</h1>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        resp.getWriter().println("<h1>This is a response from Xml configured servlet, POST method</h1>");
+        resp.getWriter().println("<h1>Hello, " + name + "!</h1>");
     }
 }

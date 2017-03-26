@@ -21,7 +21,7 @@ public class DemoServlet extends HttpServlet {
         System.out.println("GET method initialized");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>hey</h1>");
+        out.println("<h1>this is doGet changed method and DemoServlet</h1>");
         out.flush();
     }
 
