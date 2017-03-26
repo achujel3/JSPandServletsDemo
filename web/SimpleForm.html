@@ -5,11 +5,25 @@
     <title>Simple Form</title>
 </head>
 <body>
+<h1>This is SimpleForm.html</h1>
+<form method="post" action="/xmlServletPath">
+    1. UserName: <input name="userName"><br>
+    2. Full Name: <input name="fullName"><br>
+    3. Profession: <br>
+    <input type="radio" name="prof" value="Developer">Developer<br>
+    <input type="radio" name="prof" value="Architect">Architect<br>
+    <br>
+    <select name="location" multiple size=6>
+        <option value="here">here</option>
+        <option value="there">there</option>
+        <option value="far">far</option>
+        <option value="near">near</option>
+        <option value="nowhere">nowhere</option>
+    </select>
+    <br>
+    <input type="submit">
+</form>
 
-    <form method="post" action="/xmlServletPath" >
-        <input name="name">
-        <input type="submit">
-    </form>
 
 </body>
 </html>
