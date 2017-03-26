@@ -3,8 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>hello.jsp</welcome-file>
-    </welcome-file-list>
+    <display-name>Simple Servlet Demo</display-name>
+    <servlet>
+        <servlet-name>xmlServlet</servlet-name>
+        <servlet-class>com.servletdemo.samples.XmlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>xmlServlet</servlet-name>
+        <url-pattern>/xmlServletPath</url-pattern>
+    </servlet-mapping>
 </web-app>
