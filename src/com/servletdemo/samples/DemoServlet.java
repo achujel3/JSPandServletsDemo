@@ -2,6 +2,7 @@ package com.servletdemo.samples;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "DemoServlet", urlPatterns = {"/a/b/c", "/servlets/hey"})
+@WebServlet(name = "DemoServlet", urlPatterns = {"/a/b/c", "/servlets/hey"},
+        initParams = {@WebInitParam(name = "name", value = "John Doe")}
+)
 public class DemoServlet extends HttpServlet {
 
     @Override
@@ -35,7 +38,10 @@ public class DemoServlet extends HttpServlet {
         out.println("<h1>name: " + name + "</h1>");
         out.println("<h1>sessionName: " + (String) session.getAttribute("sessionName") + "</h1>");
         out.println("<h1>contextName: " + (String) servletContext.getAttribute("sessionName") + "</h1>");
+        System.out.println(this.getServletConfig().getInitParameter("name"));
         out.flush();
     }
+
+
 
 }
