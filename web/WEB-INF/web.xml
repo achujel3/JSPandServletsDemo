@@ -17,7 +17,23 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/objects.jsp</welcome-file>
+        <welcome-file>/initForm.jsp</welcome-file>
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>InitForm</servlet-name>
+        <jsp-file>/initForm.jsp</jsp-file>
+        <init-param>
+            <param-name>defaultUser</param-name>
+            <param-value>Default User Name</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>InitForm</servlet-name>
+        <url-pattern>/initForm.jsp</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
