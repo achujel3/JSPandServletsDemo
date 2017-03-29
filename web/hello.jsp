@@ -24,5 +24,10 @@
 <h1>1816 + 16846 is <%=add(1816, 16846)%>
 </h1>
 
+<!-- testing Java/Html mix -->
+<% for(int i = 0; i < 5; i++) {%>
+    <br><h1>The value is <%=i%></h1>
+<%}%>
+
 </body>
 </html>
