@@ -38,6 +38,7 @@ public class DemoServlet extends HttpServlet {
         out.println("<h1>name: " + name + "</h1>");
         out.println("<h1>sessionName: " + (String) session.getAttribute("sessionName") + "</h1>");
         out.println("<h1>contextName: " + (String) servletContext.getAttribute("sessionName") + "</h1>");
+        out.println("<h1>contextName: " + (String) servletContext.getAttribute("sessionName") + "</h1>");
         System.out.println(this.getServletConfig().getInitParameter("name"));
         out.flush();
     }
