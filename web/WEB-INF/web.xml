@@ -28,12 +28,11 @@
             <param-value>Default User Name</param-value>
         </init-param>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>InitForm</servlet-name>
         <url-pattern>/initForm.jsp</url-pattern>
     </servlet-mapping>
-
 
 
 </web-app>
