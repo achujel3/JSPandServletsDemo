@@ -1,5 +1,6 @@
 package com.servletdemo.login.form;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,10 @@ public class LoginServlet extends HttpServlet {
         boolean allowRedirect = loginService.authenticate(username, password);
 
         if (allowRedirect) {
-            response.sendRedirect("loginForm/Success.jsp");
+            request.getSession().setAttribute("username", username);
+            RequestDispatcher requestDispatcher
+                    = request.getRequestDispatcher("loginForm/Success.jsp");
+            requestDispatcher.forward(request, response);
             return;
         } else {
             response.sendRedirect("loginForm/Login.jsp");

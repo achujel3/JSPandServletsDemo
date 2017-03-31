@@ -6,6 +6,11 @@
 <body>
 
 <h3>Login successful!</h3>
+<br>
+<%
+    String username = String.valueOf(session.getAttribute("username"));
+%>
+<h3>Hello, <%=username%>!</h3>
 
 </body>
 </html>
