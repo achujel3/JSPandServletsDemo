@@ -10,7 +10,14 @@
 <%
     String username = String.valueOf(session.getAttribute("username"));
 %>
-<h3>Hello, <%=username%>!</h3>
+
+<jsp:useBean id="user" class="com.servletdemo.login.form.User" scope="request">
+    <jsp:setProperty name="user" property="username" value="new user"/>
+</jsp:useBean>
+
+<h3>Hello,
+    <jsp:getProperty name="user" property="username"/>
+    !</h3>
 
 </body>
 </html>

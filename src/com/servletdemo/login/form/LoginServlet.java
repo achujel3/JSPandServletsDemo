@@ -16,11 +16,15 @@ public class LoginServlet extends HttpServlet {
         username = request.getParameter("username");
         password = request.getParameter("password");
 
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+
         LoginService loginService = new LoginService();
-        boolean allowRedirect = loginService.authenticate(username, password);
+        boolean allowRedirect = loginService.authenticate(user);
 
         if (allowRedirect) {
-            request.getSession().setAttribute("username", username);
+            request.setAttribute("user", user);
             RequestDispatcher requestDispatcher
                     = request.getRequestDispatcher("loginForm/Success.jsp");
             requestDispatcher.forward(request, response);

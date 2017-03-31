@@ -30,7 +30,7 @@ public class DemoServlet extends HttpServlet {
         String name = request.getParameter("name");
         HttpSession session = request.getSession();
         ServletContext servletContext = request.getServletContext();
-        if(name != "" && name != null){
+        if (name != "" && name != null) {
             session.setAttribute("sessionName", name);
             servletContext.setAttribute("sessionName", name);
         }
@@ -42,7 +42,6 @@ public class DemoServlet extends HttpServlet {
         System.out.println(this.getServletConfig().getInitParameter("name"));
         out.flush();
     }
-
 
 
 }
