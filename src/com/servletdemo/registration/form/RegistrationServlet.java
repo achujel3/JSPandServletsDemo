@@ -1,0 +1,49 @@
+package com.servletdemo.registration.form;
+
+import com.servletdemo.login.form.User;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/Register")
+public class RegistrationServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String username, password, address, company, phone;
+
+        username = request.getParameter("username");
+        password = request.getParameter("password");
+        address = request.getParameter("address");
+        company = request.getParameter("company");
+        phone = request.getParameter("phone");
+
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setAddress(address);
+        user.setCompany(company);
+        user.setPhone(phone);
+
+        RegistrationService registrationService = new RegistrationService();
+        boolean allowRedirect = registrationService.authenticate(user);
+
+        if (allowRedirect) {
+            request.setAttribute("user", user);
+            RequestDispatcher requestDispatcher
+                    = request.getRequestDispatcher("regsitrationForm/RegistrationInfo.jsp");
+            requestDispatcher.forward(request, response);
+            return;
+        } else {
+            response.sendRedirect("regsitrationForm/Register.jsp");
+            return;
+        }
+    }
+
+}
